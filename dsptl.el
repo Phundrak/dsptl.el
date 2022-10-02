@@ -72,8 +72,14 @@
   (interactive)
   (let ((links (dsptl--list-links)))
     (switch-to-buffer (format "*Links in %s*" default-directory))
-    (dolist (link links)
-      (insert (format "%s\t->\t%s\n" (car link) (cdr link))))))
+    (setq tabulated-list-format [("Source File" 25 t)
+                                 ("Target" 25 t)]
+          tabulated-list-entries (mapcar (lambda (link)
+                                           (list (cdr link) (vector (car link) (cdr link))))
+                                         links))
+    (tabulated-list-init-header)
+    (tabulated-list-print t)
+    (read-only-mode 1)))
 
 (provide 'dsptl)
 ;;; dsptl.el ends here
