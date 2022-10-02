@@ -1,0 +1,11 @@
+#+title: DSPTL
+#+begin_quote
+Dead Simple PlainText Links
+#+end_quote
+
+~dsptl.el~ is born out of a university assignment where we were tasked
+to create simple links between pages in the form of /Page A/ or /Page B/
+being links to documents ~A~ or ~B~. The rest is history.
+
+This README will become more fleshed out once this package reaches a
+better working state.
