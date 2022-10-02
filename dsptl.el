@@ -61,9 +61,9 @@
                                       (group-n 1 (seq (+ (not space)) alnum))
                                       (? punctuation))
                                   nil t nil)
-          (let ((source (f-relative file))
+          (let ((source (file-relative-name file))
                 (target      (match-string-no-properties 1)))
-            (when (f-file-p target)
+            (when (file-regular-p target)
               (push `(,source . ,target) links))))))))
 
 (defun dsptl-display-links-directory ()
