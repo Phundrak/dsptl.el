@@ -6,7 +6,7 @@
 ;; Maintainer: Lucien Cartier-Tilet <lucien@phundrak.com>
 ;; URL: https://github.com/Phundrak/dsptl.el
 ;; Version: 0.1.0
-;; Package-Requires: ((emacs "26.1") (f "0.20") (dash "2.2.0"))
+;; Package-Requires: ((emacs "26.1") (f "0.20"))
 ;; Keywords: convenience text
 
 ;; This file is not part of GNU Emacs.
@@ -31,7 +31,6 @@
 
 ;;; Code:
 
-(require 'dash)
 (require 'f)
 (require 'rx)
 
@@ -50,7 +49,7 @@
 
 (defun dsptl--list-links ()
   "List all links in the current active directory."
-  (let ((files (-filter #'f-file-p (f-entries default-directory)))
+  (let ((files (seq-filter #'f-file-p (f-entries default-directory)))
         (case-fold-search t) ;; case insensitive
         (links nil))
     (dolist (file files links)
