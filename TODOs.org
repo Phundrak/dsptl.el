@@ -5,3 +5,4 @@ similar with text in the form of ~cite:reference2020~.
 
 It could also check whether the link is valid or not and apply a
 different fontface in that case (again, like ~org-ref~ does).
+* TODO Create a graphviz graph of the links found in a directory
